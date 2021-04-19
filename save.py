@@ -1,7 +1,7 @@
 import os, utility, variabelGlobal
 def Save():
     #I.S. variabel user,gadget,gadget_return_history, gadget_borrow_history, consumable, consumable_history sudah terdefinisi
-    #F.S. variabel-variabel di atas akan disimpan di file csv yang berkaitan, menimpa data yang lama
+    #F.S. variabel-variabel di atas akan disimpan di file csv yang berkaitan
     folderDir = input('Masukkan nama folder penyimpanan: ')
     if os.path.isdir(folderDir):
         utility.SimpanCSV(variabelGlobal.user['header'], variabelGlobal.user['data'], folderDir +'/user.csv')
