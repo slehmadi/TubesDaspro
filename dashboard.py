@@ -1,4 +1,4 @@
-import gadget, modifItem
+import gadget, modifItem, user, save
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     print("\n======== Command =========")
     print(" 1.  Mencari gadget berdasarkan rarity [carirarity]")
@@ -35,7 +35,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     if inUser == 'tambahitem':
         if role == 'admin':
             while True:
-                modifitem.tambahitem()
+                modifItem.tambahitem()
                 pil = input("Apa masih ingin menambah item (y/n)?:\n>>> ")
                 if pil == 'n':
                     Show(role)
@@ -45,7 +45,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     if inUser == 'hapusitem':
         if role == 'admin':
             while True:
-                modifitem.hapusitem()
+                modifItem.hapusitem()
                 pil = input("Apa masih ingin menghapus item (y/n)?:\n>>> ")
                 if pil == 'n':
                     Show(role)
@@ -55,7 +55,7 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     if inUser == 'ubahjumlah':
         if role == 'admin':
             while True:
-                gadget.ubahjumlah()
+                modifItem.ubahjumlah()
                 pil = input("Apa masih ingin mengubah jumlah item (y/n)?:\n>>> ")
                 if pil == 'n':
                     Show(role)
@@ -79,6 +79,9 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print('Anda tidak memiliki ijin akses')
             Show(role)
     if inUser == 'exit':
+        pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> "
+        if pil == 'y':
+            save.Save()
         exit()
     else:
         print('Terdapat kesalahan input, mohon ketik ulang')
