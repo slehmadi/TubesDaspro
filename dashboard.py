@@ -1,4 +1,4 @@
-import gadget, modifItem
+import gadget, modifItem, user
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     print("\n======== Command =========")
     print(" 1.  Mencari gadget berdasarkan rarity [carirarity]")
