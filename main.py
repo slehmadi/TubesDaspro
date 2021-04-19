@@ -5,6 +5,7 @@ parser.add_argument("namaFolder")
 args = parser.parse_args()
 folderDir = args.namaFolder
 
+os.chdir('saves')
 if not os.path.isdir(folderDir) :
     print('Nama folder tidak valid')
     sys.exit()
