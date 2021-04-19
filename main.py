@@ -5,7 +5,6 @@ parser.add_argument("namaFolder")
 args = parser.parse_args()
 folderDir = args.namaFolder
 
-print("Loading..")
 os.chdir('saves')
 if not os.path.isdir(folderDir) :
     print('Nama folder tidak valid')
@@ -13,8 +12,18 @@ if not os.path.isdir(folderDir) :
 
 #PROSEDUR UNTUK LOAD DATA
 variabelGlobal.Load(folderDir)
+print("Loading..")
 time.sleep(2)
 print("\nSelamat datang di \"Kantong Ajaib!\"\n")
+while True:
+    inUser = input(">>> ")
+    if inUser == 'help': 
+        print(" ======= HELP ======= ") # dengan asumsi help hanya berisi login
+        print(" login - login ke sistem kantong ajaib")
+    elif inUser == 'login'):
+        break
+    else:
+        print(" inputan tidak ada pada pilihan, coba ketik help untuk melhat list help")
 #WAJIB LOGIN TERLEBIH DAHULU
 while True: # Akan terus mengulang sampe username dan password yang dimasukkan sesuai
     print("======= Login =======")
