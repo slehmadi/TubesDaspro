@@ -1,10 +1,11 @@
-import argparse, sys, os, variabelGlobal, dashboard, validasi, user
+import argparse, sys, os, time, variabelGlobal, dashboard, validasi, user
 #Mengambil argumen yang diberikan melalui CLI
 parser = argparse.ArgumentParser()
 parser.add_argument("namaFolder")
 args = parser.parse_args()
 folderDir = args.namaFolder
 
+print("Loading..")
 os.chdir('saves')
 if not os.path.isdir(folderDir) :
     print('Nama folder tidak valid')
@@ -12,7 +13,8 @@ if not os.path.isdir(folderDir) :
 
 #PROSEDUR UNTUK LOAD DATA
 variabelGlobal.Load(folderDir)
-
+time.sleep(2)
+print("\nSelamat datang di \"Kantong Ajaib!\"\n")
 #WAJIB LOGIN TERLEBIH DAHULU
 while True: # Akan terus mengulang sampe username dan password yang dimasukkan sesuai
     print("======= Login =======")
