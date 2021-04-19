@@ -14,19 +14,22 @@ if not os.path.isdir(folderDir) :
 variabelGlobal.Load(folderDir)
 print("Loading..")
 time.sleep(2)
-print("\nSelamat datang di \"Kantong Ajaib!\"\n")
+print("\nSelamat datang di \"Kantong Ajaib!\"")
 while True:
-    inUser = input(">>> ")
+    inUser = input("\n>>> ")
     if inUser == 'help': 
-        print(" ======= HELP ======= ") # dengan asumsi help hanya berisi login
+        print("\n======= HELP =======") # dengan asumsi help hanya berisi login dan exit
         print(" login - login ke sistem kantong ajaib")
-    elif inUser == 'login'):
+        print(" exit - keluar dari sistem kantong ajaib")
+    elif inUser == 'login':
         break
+    elif inUser == 'exit':
+        sys.exit()
     else:
         print(" inputan tidak ada pada pilihan, coba ketik help untuk melhat list help")
 #WAJIB LOGIN TERLEBIH DAHULU
 while True: # Akan terus mengulang sampe username dan password yang dimasukkan sesuai
-    print("======= Login =======")
+    print("\n======= Login =======")
     username = input('Masukkan username: ')
     password = input('Masukkan password: ')
     if validasi.isCredentialValid(username,password):
