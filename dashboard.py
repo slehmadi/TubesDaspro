@@ -1,4 +1,4 @@
-import gadget, modifItem, user
+import gadget, modifItem, user, save
 def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
     print("\n======== Command =========")
     print(" 1.  Mencari gadget berdasarkan rarity [carirarity]")
@@ -79,6 +79,9 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
             print('Anda tidak memiliki ijin akses')
             Show(role)
     if inUser == 'exit':
+        pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> "
+        if pil == 'y':
+            save.Save()
         exit()
     else:
         print('Terdapat kesalahan input, mohon ketik ulang')
