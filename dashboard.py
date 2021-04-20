@@ -60,6 +60,22 @@ def Show(role):    # Laman Utama [Ini tidak sesuai spesifikasi yang diinginkan]
         else:
             print('Anda tidak memiliki ijin akses')
             Show(role)
+    if inUser == 'minta':
+        if role == 'user':
+            while True:
+                consumable.minta()
+                pil = input("Apa masih ingin meminta lagi (y/n)?:\n>>> ")
+                if pil == 'n':
+                    Show(role) 
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
+    if inUser == 'riwayatambil':
+        if role = 'admin':
+            consumable.riwayatambil()
+        else:
+            print('Anda tidak memiliki ijin akses')
+            Show(role)
     if inUser == 'save':
         pil = input("Apa Anda ingin untuk menyimpan perubahan (y/n)?\n>>> ")
         if pil == 'y':
